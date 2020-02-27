@@ -23,7 +23,7 @@
               <div class="navbar-nav ml-auto ">
                 <a class="nav-item nav-link" href="#">Twitter </a>
                 <a class="nav-item nav-link" href="#">Resume</a>
-                <a class="nav-item nav-link" href="#">Blog</a>
+                <a class="nav-item nav-link active" href="#">Blog</a>
               </div>
             </div>
           </nav> 
@@ -31,34 +31,12 @@
 </header>
 
 <main role="main">
-
-  <section class="jumbotron text-center">
     <div class="container">
-      <h1>hi, i'm gopal</h1>
-      <p class="lead text-muted">welcome to my official blog page, here you can know about me, you can view my pictures,recent updates of mine and my resume</p>
-      <p>
-        <a href="mailto:nanthu0123@gmail.com" class="btn btn-primary my-2">E-Mail Me</a>
-        
-      </p>
+        <h1 class="text-center pt-3">welcome to my blog page</h1>
+        <br><br>
+        <h2>latest post</h2>
+        <hr>
     </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        {%for job in jobs.all%}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="{{job.image.url}}">
-            <div class="card-body">
-              <p class="card-text">{{job.summary}}</p>
-            </div>
-          </div>
-        </div>
-        {%endfor%}
-      </div>
-    </div>
-  </div>
 </main>
 <footer class="text-muted">
   <div class="container text-center">
