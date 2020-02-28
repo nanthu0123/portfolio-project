@@ -2,12 +2,11 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {%load static%}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>my blogs</title>
+    <title>home</title>
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -15,31 +14,29 @@
   <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Nanthagopal</a>
+            <a class="navbar-brand" href="{%url 'home'%}">Nanthagopal</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto ">
-                <a class="nav-item nav-link" href="#">Twitter </a>
-                <a class="nav-item nav-link" href="#">Resume</a>
-                <a class="nav-item nav-link" href="#">Blog</a>
+                <a class="nav-item nav-link" href="https://facebook.com/">Facebook</a>
+                <a class="nav-item nav-link" href="{%static 'resume.pdf'%}">Resume</a>
+                <a class="nav-item nav-link" href="{%url 'allblogs'%}">Blog</a>
               </div>
             </div>
-          </nav> 
-  
-</header>
+        </nav> 
+  </header>
 
 <main role="main">
-
   <section class="jumbotron text-center">
     <div class="container">
       <h1>hi, i'm gopal</h1>
       <p class="lead text-muted">welcome to my official blog page, here you can know about me, you can view my pictures,recent updates of mine and my resume</p>
       <p>
         <a href="mailto:nanthu0123@gmail.com" class="btn btn-primary my-2">E-Mail Me</a>
-        
       </p>
+      <img src="{%static 'profile.jpg'%}" height="300">
     </div>
   </section>
 
@@ -49,7 +46,7 @@
         {%for job in jobs.all%}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="{{job.image.url}}">
+            <img class="img-fluid" src="{{job.image.url}}">
             <div class="card-body">
               <p class="card-text">{{job.summary}}</p>
             </div>
